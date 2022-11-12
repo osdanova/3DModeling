@@ -334,7 +334,7 @@ After the VIF data there's a reserved space for the bone list. 4 Quadwords per b
 <img src="Images/MDLXModel22.png" width="800"/>
 </div>
 
-You can check out the VPU memory for P_EX100 and F_EX030's first VIFs in the files folder of this repository. Provided by [KenjiUno](https://github.com/kenjiuno).
+You can check out the VPU memory for F_EX030 (Single weights) and H_EX500's (Multiple weights) first VIFs in the files folder of this repository. Provided by [KenjiUno](https://github.com/kenjiuno).
 
 <br/>
 
