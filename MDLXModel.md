@@ -173,7 +173,7 @@ Each group starts with an unpack command (0x01010001) and is followed by the unp
 * Location in VPU memory (More on this later)
 * Value length - 0x80: 4 bytes; 0xC0: 1 byte; 
 * Read Count
-* Read length - 0x6C: 16 bytes; 0x78: 12 bytes;  0x65: 4 bytes; 0x72: 1 byte
+* Read length - 0x6C: 16 bytes; 0x78: 12 bytes;  0x65: 4 bytes; 0x72: 1 byte (Colors uses 6E for 4 bytes)
 
 Eg: if I want to read integers in groups of 16 bytes from a 32 byte code to VPU address 0, it would be: 0x 00 80 02 6C
 
@@ -239,7 +239,21 @@ In this example, we have the following strip: V1, V2, V3-triangle (3,1,2), V4-tr
 <img src="Images/MDLXModel13.png" width="100"/>
 </div>
 
-After the last function there's a padding to align the code to 4 bytes long. This section ends with 0x 00 00 00 31 00 00 80 3F 00 00 80 3F 00 00 80 3F 00 00 80 3F 00 00 00 20 80 80 80 80.
+After the last function there's a padding to align the code to 4 bytes long.
+
+### Colors
+
+Params: 0x XX C0 YY 6E (Count is usually capped at 0x4F)
+
+One color per vertex, each entry contains RGBA (Alpha may be a boolean)
+
+<div align="center">
+<img src="Images/MDLXModel25.png" width="500"/>
+</div>
+
+### Vertex list end
+
+This section is the end of the vertex list and is always 0x 00 00 00 31 00 00 80 3F 00 00 80 3F 00 00 80 3F 00 00 80 3F 00 00 00 20 80 80 80 80.
 
 ### Positions
 
