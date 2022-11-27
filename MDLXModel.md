@@ -153,7 +153,7 @@ We could divide each chain in 3 parts:
 * The bone weight tags. They always use 4 quadwords, their address is the bone index, their 1st parameter is always 0x01010001, and the second parameter is a VIF code (More on this later)
 * The chain end tag, which is always the same.
 
-**NOTE:** Even if the code is split in multiple DMA chains, the resulting data must be read together! The code in a chain may reference data in the precious chain!
+**NOTE:** Even if the code is split in multiple DMA chains, the resulting data must be read together! The code in a chain may reference data in the previous chain!
 
 ## VIF data
 
